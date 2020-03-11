@@ -16,11 +16,11 @@ namespace inclass10thMarch.Controllers
         private SchoolContext db = new SchoolContext();
 
         // GET: Student
-        public ActionResult Index()
+
+        public ViewResult Index()
         {
             return View(db.Students.ToList());
         }
-
         // GET: Student/Details/5
         public ActionResult Details(int? id)
         {
@@ -43,8 +43,6 @@ namespace inclass10thMarch.Controllers
         }
 
         // POST: Student/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ID,LastName,FirstMidName,EnrollmentDate")] Student student)
@@ -75,8 +73,6 @@ namespace inclass10thMarch.Controllers
         }
 
         // POST: Student/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "ID,LastName,FirstMidName,EnrollmentDate")] Student student)
